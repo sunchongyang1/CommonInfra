@@ -158,8 +158,10 @@ public class AccountManagementSessionBean implements AccountManagementSessionBea
     @Override
     public boolean checkLogin(String username, String userType, String password) throws UserNotExistException, PasswordNotMatchException {
         if(userType.equals("Admin")) {
-            Query query = em.createQuery("SELECT c FROM CompanyAdminAccount c WHERE c.username = :user");
+            Query query = em.createQuery("SELECT c FROM CompanyAdminAccount c WHERE c.username = :user AND c.lockedOrNot = :lock AND c.deleteOrNot = :delete");
             query.setParameter("user", username);
+            query.setParameter("lock", false);
+            query.setParameter("delete", false);
             List<CompanyAdminAccount> companyAdminAccountList = query.getResultList();
             if(companyAdminAccountList.isEmpty()) {
                 System.out.println("User " + username + " does not exist!");
@@ -176,8 +178,10 @@ public class AccountManagementSessionBean implements AccountManagementSessionBea
 //                return false;//password does not match, enter again
             }
         } else if(userType.equals("User")) {
-            Query query = em.createQuery("SELECT c FROM CompanyUserAccount c WHERE c.username = :user");
+            Query query = em.createQuery("SELECT c FROM CompanyUserAccount c WHERE c.username = :user AND c.lockedOrNot = :lock AND c.deleteOrNot = :delete");
             query.setParameter("user", username);
+            query.setParameter("lock", false);
+            query.setParameter("delete", false);
             List<CompanyUserAccount> companyUserAccountList = query.getResultList();
             if(companyUserAccountList.isEmpty()) {
                 System.out.println("User " + username + " does not exist!");
@@ -194,8 +198,10 @@ public class AccountManagementSessionBean implements AccountManagementSessionBea
 //                return false;//password does not match, enter again
             }
         } else if(userType.equals("SystemAdmin")) {
-            Query query = em.createQuery("SELECT s FROM SystemAdminAccount s WHERE s.username = :user");
+            Query query = em.createQuery("SELECT s FROM SystemAdminAccount s WHERE s.username = :user AND c.lockedOrNot = :lock AND c.deleteOrNot = :delete");
             query.setParameter("user", username);
+            query.setParameter("lock", false);
+            query.setParameter("delete", false);
             List<SystemAdminAccount> systemAdminAccountList = query.getResultList();
             if(systemAdminAccountList.isEmpty()) {
                 System.out.println("User " + username + " does not exist!");

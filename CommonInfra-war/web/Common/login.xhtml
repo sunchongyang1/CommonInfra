@@ -14,47 +14,32 @@
                 <h:form>
                     <p:panel id ="panel">
                         <h:panelGrid columns="1" cellpadding="5">
+                            
+                            <h:outputLabel for="domain" value="Domain:" />
+                            <p:selectOneMenu id="domain" value="#{loginManagedBean.domain}">
+                                <f:selectItem itemLabel="Select One" itemValue="" />
+                                <f:selectItem itemLabel="System Admin" itemValue="systemAdmin" />
+                                <f:selectItem itemLabel="Company Admin" itemValue="companyAdmin" />
+                                <f:selectItem itemLabel="Company User" itemValue="companyUser" />
+                            </p:selectOneMenu>
+                            <p:messages for="domain" />
 
                             <h:outputLabel for="username" value="Username: *" />
-                            <p:inputText id="username" value="#{systemAdminManagedBean.username}" label="Username" required="true" >
+                            <p:inputText id="username" value="#{loginManagedBean.username}" label="Username" required="true" >
                                 <f:validateLength minimum="4" maximum="25" />
                                 <p:watermark for="username" value="Please enter username" />
                             </p:inputText>                        
                             <p:messages for="username" />
 
                             <h:outputLabel for="password" value="Password: *" />
-                            <p:password id="email" value="#{systemAdminManagedBean.email}" label="email" required="true" >
-                                <p:watermark for="email" value="Please enter password" />
+                            <p:password id="email" value="#{loginManagedBean.password}" label="Password" required="true" >
+                                <p:watermark for="password" value="Please enter password" />
                             </p:password>
-                            <p:messages for="email" />
+                            <p:messages for="password" />
 
-                            <h:outputLabel for="companyName" value="Company Name: *" />
-                            <p:inputText id="companyName" value="#{systemAdminManagedBean.company.companyName}" label="CompanyName" required="true">
-                                <!--<f:validateRegex pattern="" />-->
-                                <p:watermark for="companyName" value="Input company name" />
-                            </p:inputText>
-                            <p:messages for="companyName" />
+                           </h:panelGrid>
 
-                            <h:outputLabel for="companyType" value="Company Type:" />
-                            <p:selectOneMenu id="companyType" value="#{systemAdminManagedBean.company.companyType}">
-                                <f:selectItem itemLabel="Select One" itemValue="" />
-                                <f:selectItem itemLabel="1PL" itemValue="1PL" />
-                                <f:selectItem itemLabel="2PL" itemValue="2PL" />
-                                <f:selectItem itemLabel="3PL" itemValue="3PL" />
-                                <f:selectItem itemLabel="4PL" itemValue="4PL" />
-                                <f:selectItem itemLabel="5PL" itemValue="5PL" />
-                            </p:selectOneMenu>
-                            <p:messages for="companyType" />
-
-                            <h:outputLabel for="contactNo" value="Contact Number: *" />
-                            <p:inputText id="contactNo" value="#{systemAdminManagedBean.company.contactNo}" label="ContactNo" required="true">
-                                <p:watermark for="contactNo" value="Input contact number" />
-                            </p:inputText>
-                            <p:messages for="contactNo" />
-
-                        </h:panelGrid>
-
-                            <p:commandButton ajax="true" type="submit" value="Create" actionListener="#{systemAdminManagedBean.saveCompany()}" />
+                            <p:commandButton ajax="true" type="submit" value="Login" actionListener="#{loginManagedBean.login()}" />
                     </p:panel>
                 </h:form>
 
