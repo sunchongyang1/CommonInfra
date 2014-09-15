@@ -28,7 +28,7 @@ import util.exception.DepartmentNotExistException;
  */
 @Stateless
 public class CompanyManagementSessionBean implements CompanyManagementSessionBeanLocal {
-    @PersistenceContext(unitName = "MerLionPlatform-ejbPU")
+    @PersistenceContext
     private EntityManager em;
     
     @Override

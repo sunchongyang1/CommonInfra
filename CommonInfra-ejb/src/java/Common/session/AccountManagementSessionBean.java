@@ -47,7 +47,7 @@ public class AccountManagementSessionBean implements AccountManagementSessionBea
      * @see #passwordAssign()
      */
     public static final int SALT_LENGTH = 8;
-    @PersistenceContext(unitName = "MerLionPlatform-ejbPU")
+    @PersistenceContext
     private EntityManager em;
     private GoogleMail gm;
 

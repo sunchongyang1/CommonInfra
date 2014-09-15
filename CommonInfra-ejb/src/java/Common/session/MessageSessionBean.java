@@ -23,7 +23,7 @@ import javax.persistence.Query;
 @Stateless
 public class MessageSessionBean implements MessageSessionBeanLocal {
     
-    @PersistenceContext(unitName = "MerLionPlatform-ejbPU")
+    @PersistenceContext
     private EntityManager em;
     Message message;
     Account account;
