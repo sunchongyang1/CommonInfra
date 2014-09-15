@@ -1,3 +1,7 @@
 /nbproject/private/
 /CommonInfra-ejb/nbproject/private/
 /CommonInfra-war/nbproject/private/
+/CommonInfra-ejb/build/
+/CommonInfra-ejb/dist/
+/CommonInfra-war/build/
+/build/
