@@ -1,4 +1,0 @@
-CommonInfra
-===========
-
-Common infrastructure
