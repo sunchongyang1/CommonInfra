@@ -1,0 +1,364 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+xmlns:h="http://java.sun.com/jsf/html"
+xmlns:ui="http://java.sun.com/jsf/facelets">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="This is the home page of winexpress">
+    <meta name="author" content="Sunnie">
+    <ui:insert name="head-title">
+        <title>MerLion Platform | Homepage</title>
+    </ui:insert>
+
+    <!-- Bootstrap core CSS -->
+    <link href="../resources/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Add custom CSS here -->
+    <link href="../resources/css/merlion-platform.css" rel="stylesheet" type="text/css">
+    <link href="../resources/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="http://fonts.googleapis.com/css?family=Sonsie+One" rel="stylesheet" type="text/css">
+    <link href="../resources/css/bootstrap-formhelpers.min.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+    <nav class="navbar navbar-inverse navbar-fixed-top headroom" role="navigation" style="height:34px; min-height:34px;">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="index.xhtml" style="padding: 5px 15px;color: #ffffff;font-family: 'Sonsie One', cursive;">MerLion Platform</a>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse navbar-ex1-collapse">
+
+                <div class="col-sm-4 col-md-4">
+                    <form class="navbar-form" style="margin-top: 2px;" role="search">
+                        <div class="input-group  input-group-sm">
+                            <input type="text" class="form-control" placeholder="Looking for something?" name="q">
+                            <div class="input-group-btn">
+                                <button class="btn btn-default" type="submit"><i class="glyphicon glyphicon-search"></i></button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <form class="navbar-form pull-right" style="margin-top: 2px;">
+                    <a href="sign_in.html" class="btn btn-primary btn-sm">Join Us Now!</a>
+                    <a href="sign_in.html" class="btn btn-default btn-sm">Login</a>
+                    <div class="btn-group">
+                        <li class="dropdown" style="list-style:none;">
+                            <button type="submit" class="btn btn-default btn-sm" style="border-right:0px;width:140px;"><span class="glyphicon glyphicon-user"></span> My Account</button>
+                            <button type="button" class="btn btn-default btn-sm dropdown-toggle" style="margin-left: -5px; border-left: 1px;padding: 8px 5px;" data-toggle="dropdown">
+                                <i class="fa fa-angle-down"></i>
+                                <span class="sr-only">Toggle Dropdown</span>
+                            </button>
+                            <ul class="dropdown-menu" role="menu">
+                                <li><a href="#">Purchase History</a></li>
+                                <li><a href="#">My Promotion</a></li>
+                                <li><a href="#">My Messages</a></li>
+                                <li class="divider"></li>
+                                <li><a href="#">My Watch List</a></li>
+                                <li><a href="#">My Wish List</a></li>
+                                <li class="divider"></li>
+                                <li><a href="#"><i class="fa fa-power-off"></i> Sign Out</a></li>
+                            </ul>
+                        </li>
+                    </div>
+                </form>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container -->
+    </nav>
+
+    <div class="navbar-wrapper">
+        <div id="logo">
+            <h1>MERLION</h1>
+        </div>
+        <!-- Wrap the .navbar in .container to center it within the absolutely positioned parent. -->
+        <div id="nav">
+            <ol id="mainMenu">
+                <li class="dropdown">
+                    <a href="#" data-toggle="dropdown" class="dropdown-toggle" id="mainMenuBorder">VIEW ALL</a> 
+                    <ul class="dropdown-menu">
+                        <li><a href="shop_index.html">VIEW ALL</a></li>
+                        <li><a href="new_arrival.html">NEW ARRIVALS</a></li>
+                        <li><a href="#">TOP 20 BEST SELLERS</a></li>
+                        <li><a href="#">FINE AND RARE WINE</a></li>
+                        <li><a href="#">WEDDING WINES</a></li>
+                        <li><a href="#">PROMOTIONS</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a href="#" data-toggle="dropdown" class="dropdown-toggle" id="mainMenuBorder">COUNTRY</a> 
+                    <ul class="dropdown-menu">
+                        <li><a href="#"><i class="glyphicon bfh-flag-FR"></i>France</a></li>
+                        <li><a href="#"><i class="glyphicon bfh-flag-IT"></i>Italy</a></li>
+                        <li><a href="#"><i class="glyphicon bfh-flag-ES"></i>Spain</a></li>
+                        <li><a href="#"><i class="glyphicon bfh-flag-US"></i>United States</a></li>
+                        <li><a href="#"><i class="glyphicon bfh-flag-CN"></i>China</a></li>
+                        <li><a href="#"><i class="glyphicon bfh-flag-AR"></i>Argentina</a></li>
+                        <li><a href="#"><i class="glyphicon bfh-flag-AU"></i>Austrilia</a></li>
+                        <li><a href="#"><i class="glyphicon bfh-flag-CL"></i>Chile</a></li>
+                        <li><a href="#"><i class="glyphicon bfh-flag-DE"></i>Germany</a></li>
+                        <li><a href="#"><i class="glyphicon bfh-flag-RU"></i>Russia</a></li>
+                        <li><a href="#"><i class="glyphicon bfh-flag-BR"></i>Brazil</a></li>
+                        <li><a href="#"><i class="glyphicon bfh-flag-JP"></i>Japan</a></li>
+                        <li><a href="#"><i class="glyphicon bfh-flag-CA"></i>Canada</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" id="mainMenuBorder">WINE TYPE</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#"><img alt="Red Wine" title="Red Wine" src="../resources/img/category/red.png" style="height:20px;width:20px;">&nbsp;Red</a></li>
+                        <li><a href="#"><img alt="Rose Wine" title="Rose Wine" src="../resources/img/category/rose.png" style="height:20px;width:20px;">&nbsp;Rose</a></li>
+                        <li><a href="#"><img alt="Sparkling Wine" title="Sparkling Wine" src="../resources/img/category/sparkling.png" style="height:20px;width:20px;">&nbsp;Sparkling</a></li>
+                        <li><a href="#"><img alt="White Wine" title="White Wine" src="../resources/img/category/white.png" style="height:20px;width:20px;">&nbsp;White</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a href="#" data-toggle="dropdown" class="dropdown-toggle" id="mainMenuBorder">FOOD PAIRING</a> 
+                    <ul class="dropdown-menu">
+                        <li><a href="#">BEEF</a></li>
+                        <li><a href="#">PORK</a></li>
+                        <li><a href="#">CHICKEN</a></li>
+                        <li><a href="#">LAMB</a></li>
+                        <li><a href="#">DUCK</a></li>
+                        <li><a href="#">FISH</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a href="#" data-toggle="dropdown" class="dropdown-toggle" id="mainMenuBorder">WINE ACCESSORIES</a> 
+                    <ul class="dropdown-menu">
+                        <li><a href="#">Glasses</a></li>
+                        <li><a href="#">Bottle Openers</a></li>
+                        <li><a href="#">Coolers</a></li>
+                        <li><a href="#">Decanters</a></li>
+                        <li><a href="#">Racks</a></li>
+                        <li><a href="#">Collar</a></li>
+                        <li><a href="#">Stopper</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a href="#" data-toggle="dropdown" class="dropdown-toggle" id="mainMenuBorder">RATING</a> 
+                    <ul class="dropdown-menu">
+                        <li><a href="#"><div class="rateit" data-rateit-value="5" data-rateit-ispreset="true" data-rateit-readonly="true"></div></a></li>
+                        <li><a href="#"><div class="rateit" data-rateit-value="4" data-rateit-ispreset="true" data-rateit-readonly="true"></div></a></li>
+                        <li><a href="#"><div class="rateit" data-rateit-value="3" data-rateit-ispreset="true" data-rateit-readonly="true"></div></a></li>
+                        <li><a href="#"><div class="rateit" data-rateit-value="2" data-rateit-ispreset="true" data-rateit-readonly="true"></div></a></li>
+                        <li><a href="#"><div class="rateit" data-rateit-value="1" data-rateit-ispreset="true" data-rateit-readonly="true"></div></a></li>
+                    </ul>
+                </li>
+            </ol>
+        </div>
+    </div><!-- /.navbar-wrapper -->
+
+  <!-- Intro -->
+  <div id="about" class="intro">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 col-md-offset-3 text-center">
+                  <div class="well well-sm" style="background-color: rgba(245, 245, 245, 0.8);">
+                  <h1>Example headline.</h1>
+                  <p class="lead">Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
+                  <button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#signup">JOIN US NOW!</button>
+              </div>
+          </div>
+      </div>
+  </div>
+</div>
+<!-- /Intro -->
+
+<!-- Services -->
+<div id="services" class="services">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4 col-md-offset-4 text-center">
+                <h2>Our Business</h2>
+                <hr>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-2 col-md-offset-2 text-center">
+                <div class="service-item">
+                    <i class="service-icon fa fa-rocket"></i>
+                    <h4>Spacecraft Repair</h4>
+                    <p>Did your navigation system shut down in the middle of that asteroid field? We can repair any dings and scrapes to your spacecraft!</p>
+                </div>
+            </div>
+            <div class="col-md-2 text-center">
+                <div class="service-item">
+                    <i class="service-icon fa fa-magnet"></i>
+                    <h4>Problem Solving</h4>
+                    <p>Need to know how magnets work? Our problem solving solutions team can help you identify problems and conduct exploratory research.</p>
+                </div>
+            </div>
+            <div class="col-md-2 text-center">
+                <div class="service-item">
+                    <i class="service-icon fa fa-shield"></i>
+                    <h4>Blacksmithing</h4>
+                    <p>Planning a time travel trip to the middle ages? Preserve the space time continuum by blending in with period accurate armor and weapons.</p>
+                </div>
+            </div>
+            <div class="col-md-2 text-center">
+                <div class="service-item">
+                    <i class="service-icon fa fa-pencil"></i>
+                    <h4>Pencil Sharpening</h4>
+                    <p>We've been voted the best pencil sharpening service for 10 consecutive years. If you have a pencil that feels dull, we'll get it sharp!</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- /Services -->
+<!-- /Footer -->
+<div class="container">
+    <hr style="border-bottom: 3px solid #000000;">
+    <h3>ABOUT MERLION PLATFORM</h3>
+    <hr>
+    <div  id="footerSection">
+        <div class="row">
+            <div class="col-md-3 text-left">
+                <h5>ACCOUNT</h5>
+                <a href="login.html">YOUR ACCOUNT</a>
+                <a href="login.html">PERSONAL INFORMATION</a> 
+                <a href="login.html">ADDRESSES</a> 
+                <a href="login.html">DISCOUNT</a>  
+                <a href="login.html">ORDER HISTORY</a>
+            </div>
+            <div class="col-md-3 text-left">
+                <h5>INFORMATION</h5>
+                <a href="about_us.html">CONTACT</a>  
+                <a href="register.html">REGISTRATION</a>  
+                <a href="legal_notice.html">LEGAL NOTICE</a>  
+                <a href="tac.html">TERMS AND CONDITIONS</a> 
+                <a href="faq.html">FAQ</a>
+            </div>
+            <div class="col-md-3 text-left">
+                <h5>OUR OFFERS</h5>
+                <a href="#">NEW PRODUCTS</a> 
+                <a href="#">TOP SELLERS</a>  
+                <a href="special_offer.html">SPECIAL OFFERS</a>  
+                <a href="#">MANUFACTURERS</a> 
+                <a href="#">SUPPLIERS</a> 
+            </div>
+            <div id="socialMedia" class="col-md-3 text-left pull-right">
+                <h5>WE ACCEPT </h5>
+                <img src="../resources/img/payment_methods.png" class="img-responsive" alt="Responsive image">
+            </div> 
+        </div>
+        <br />
+        <div class="well well-sm">
+            <form class="form-inline text-center" role="form">
+                <h4 style="display: inline;">SUBSCRIBE EMAIL PROMOTION:  </h4>
+                <div class="form-group">
+                    <label class="sr-only" for="subemail1">Email address</label>
+                    <input type="email" class="form-control input-sm" id="subemail1" placeholder="Enter email">
+                </div>
+                <div class="form-group">
+                    <label class="sr-only" for="subemail2">Email address</label>
+                    <input type="email" class="form-control input-sm" id="subemail2" placeholder="Confirm email">
+                </div>
+                <button type="submit" class="btn btn-sm btn-default">SUBSCRIBE!</button>
+            </form>
+            <ul id="footer-link" class="list-inline text-center">
+               <li><h4>FOLLOW US: </h4></li>
+               <li>
+                <a href="#"><span class="fa-stack fa-lg">
+                    <i class="fa fa-square-o fa-stack-2x"></i>
+                    <i class="fa fa-facebook fa-stack-1x"></i>
+                </span></a>
+            </li>
+            <li>
+                <a href="#"><span class="fa-stack fa-lg">
+                    <i class="fa fa-square-o fa-stack-2x"></i>
+                    <i class="fa fa-twitter fa-stack-1x"></i>
+                </span></a>
+            </li>
+            <li>
+                <a href="#"><span class="fa-stack fa-lg">
+                    <i class="fa fa-square-o fa-stack-2x"></i>
+                    <i class="fa fa-weibo fa-stack-1x"></i>
+                </span></a>
+            </li>
+            <li>
+                <a href="#"><span class="fa-stack fa-lg">
+                    <i class="fa fa-square-o fa-stack-2x"></i>
+                    <i class="fa fa-google-plus fa-stack-1x"></i>
+                </span></a>
+            </li>
+            <li>
+                <a href="#"><span class="fa-stack fa-lg">
+                    <i class="fa fa-square-o fa-stack-2x"></i>
+                    <i class="fa fa-tumblr fa-stack-1x"></i>
+                </span></a>
+            </li>
+            <li>
+                <a href="#"><span class="fa-stack fa-lg">
+                    <i class="fa fa-square-o fa-stack-2x"></i>
+                    <i class="fa fa-pinterest fa-stack-1x"></i>
+                </span></a>
+            </li>
+            <li>
+                <a href="#"><span class="fa-stack fa-lg">
+                    <i class="fa fa-square-o fa-stack-2x"></i>
+                    <i class="fa fa-renren fa-stack-1x"></i>
+                </span></a>
+            </li>
+            <li>
+                <a href="#"><span class="fa-stack fa-lg">
+                    <i class="fa fa-square-o fa-stack-2x"></i>
+                    <i class="fa fa-youtube fa-stack-1x"></i>
+                </span></a>
+            </li>
+        </ul>
+    </div>
+    <hr>
+    <p align="center">Copyright &copy; 2014. IS3102ES02.</p>
+</div>
+<!-- /container -->
+</div>
+
+<!-- Back-to-top Example -->
+<a href="#" class="btn back-to-top btn-light btn-fixed-bottom" id="backToTop"> <span class="glyphicon glyphicon-chevron-up"></span> </a>
+
+<!-- JavaScript -->
+<script src="../resources/js/jquery-1.10.2.js"></script>
+<script src="../resources/js/bootstrap.min.js"></script>
+<script src="../resources/js/bootstrapValidator.min.js"></script>
+
+<!-- HeadRoom  -->
+<style type="text/css">
+    .headroom {position: fixed;top: 0;left: 0;right: 0;transition: all .2s ease-in-out;}
+    .headroom--unpinned {top: -100px;}
+    .headroom--pinned {top: 0;}
+</style>
+<script  type="text/javascript"  src="https://rawgithub.com/WickyNilliams/headroom.js/master/dist/headroom.js"></script>      
+<script  type="text/javascript"  src="https://rawgithub.com/WickyNilliams/headroom.js/master/src/jQuery.headroom.js"></script>
+<script type="text/javascript">
+    $(".navbar-fixed-top").headroom();
+</script>  
+
+<!-- Script to Activate the Carousel -->
+<script>
+    $(document).ready(function() {
+        $("#carousel").carousel({
+                interval: 5000 //changes the speed
+            })
+    });
+</script>
+<!-- back to top -->
+<script src="../resources/js/showup.js"></script>
+<!--form helper-->
+<script src="../resources/js/bootstrap-formhelpers.min.js"></script>
+<!-- social buttons-->
+<script src="../resources/js/social-likes.min.js"></script>
+
+</body>
+</html>

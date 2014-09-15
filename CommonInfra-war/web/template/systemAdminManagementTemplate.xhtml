@@ -1,0 +1,109 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:p="http://primefaces.org/ui">
+    
+    <h:head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta name="description" content="This is the home page of winexpress" />
+        <meta name="author" content="Sunnie" />
+        <ui:insert name="head-title">
+            <title>MerLion Platform | Homepage</title>
+        </ui:insert>
+
+        <!-- Bootstrap core CSS -->
+        <link href="./resources/css/bootstrap.min.css" rel="stylesheet"/>
+
+        <!-- Add custom CSS here -->
+        <link href="./resources/css/merlion-platform.css" rel="stylesheet" type="text/css"/>
+        <link href="./resources/css/font-awesome.min.css" rel="stylesheet" type="text/css"/>
+        <link href="http://fonts.googleapis.com/css?family=Sonsie+One" rel="stylesheet" type="text/css"/>
+        <link href="./resources/css/bootstrap-formhelpers.min.css" rel="stylesheet" type="text/css"/>
+<!--        <script>
+            var seconds = 61;
+            function secondPassed() {
+                var minutes = Math.round((seconds - 30) / 60);
+                var remainingSeconds = seconds % 60;
+                if (remainingSeconds >= 10) {                    
+                }else{
+                    remainingSeconds = "0" + remainingSeconds;
+                }
+                document.getElementById('countdown').innerHTML = minutes + ":" + remainingSeconds;
+                if (seconds == 0) {
+                    clearInterval(countdownTimer);
+                    var r = confirm("Timeout!! Try again");
+                    if (r == true)
+                    {
+                    }
+                    else
+                    {
+                    }
+                } else {
+                    seconds--;
+                }
+            }
+            var countdownTimer = setInterval('secondPassed()', 1000);
+        </script>-->   
+    </h:head>
+    <h:body>
+        <p:layout fullPage="true" >
+            <p:layoutUnit position="north" >
+                <ui:insert name="header" >
+                    <ui:include src="defaultHeader.xhtml" />
+                </ui:insert>
+            </p:layoutUnit>
+
+            <p:layoutUnit position="center">                                                         
+                <ui:insert name="contents">
+                </ui:insert>
+            </p:layoutUnit>
+
+            <p:layoutUnit position="south">
+                <ui:insert name="footer">
+                    <ui:include src="defaultFooter.xhtml" />
+                </ui:insert>
+            </p:layoutUnit>
+        </p:layout>
+        
+        <!-- Back-to-top Example -->
+<a href="#" class="btn back-to-top btn-light btn-fixed-bottom" id="backToTop"> <span class="glyphicon glyphicon-chevron-up"></span> </a>
+        
+        <!-- JavaScript -->
+<script src="./resources/js/jquery-1.10.2.js"></script>
+<script src="./resources/js/bootstrap.min.js"></script>
+<script src="./resources/js/bootstrapValidator.min.js"></script>
+
+<!-- HeadRoom  -->
+<style type="text/css">
+    .headroom {position: fixed;top: 0;left: 0;right: 0;transition: all .2s ease-in-out;}
+    .headroom--unpinned {top: -100px;}
+    .headroom--pinned {top: 0;}
+</style>
+<script  type="text/javascript"  src="https://rawgithub.com/WickyNilliams/headroom.js/master/dist/headroom.js"></script>      
+<script  type="text/javascript"  src="https://rawgithub.com/WickyNilliams/headroom.js/master/src/jQuery.headroom.js"></script>
+<script type="text/javascript">
+    $(".navbar-fixed-top").headroom();
+</script>  
+
+<!-- Script to Activate the Carousel -->
+<script>
+    $(document).ready(function() {
+        $("#carousel").carousel({
+                interval: 5000 //changes the speed
+            });
+    });
+</script>
+<!-- back to top -->
+<script src="./resources/js/showup.js"></script>
+<!--form helper-->
+<script src="./resources/js/bootstrap-formhelpers.min.js"></script>
+<!-- social buttons-->
+<script src="./resources/js/social-likes.min.js"></script>
+
+    </h:body>
+</html>
+

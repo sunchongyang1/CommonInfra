@@ -1,0 +1,75 @@
+<ui:composition template="/template/defaultTemplate.xhtml"
+                xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:h="http://java.sun.com/jsf/html"
+                xmlns:ui="http://java.sun.com/jsf/facelets"
+                xmlns:p="http://primefaces.org/ui"
+                xmlns:f="http://java.sun.com/jsf/core">
+            <ui:define name="head-title">
+                <title>
+                    MerLION Platform | Company User Registration
+                </title>
+            </ui:define>
+            <ui:define name="contents"> 
+
+                <h:form>
+                    <p:panel id ="panel">
+                        <h:panelGrid columns="1" cellpadding="5">
+                            <f:facet name="header">
+                                Company User Information
+                            </f:facet>
+
+                            <h:outputLabel for="username" value="Username: *" />
+                            <p:inputText id="username" value="#{companyAdminManagedBean.username}" label="Username" required="true" >
+                                <f:validateLength minimum="4" maximum="25" />
+                                <p:watermark for="username" value="Input Username" />
+                            </p:inputText>                        
+                            <p:messages for="username" />
+                            
+                            <h:outputLabel for="firstName" value="First name: *" />
+                            <p:inputText id="firstName" value="#{companyAdminManagedBean.firstName}" label="FirstName" required="true" >
+                                <p:watermark for="firstName" value="Input first name" />
+                            </p:inputText>                        
+                            <p:messages for="firstName" />
+                            
+                            <h:outputLabel for="lastname" value="Last Name: *" />
+                            <p:inputText id="lastName" value="#{companyAdminManagedBean.lastName}" label="lastName" required="true" >
+                                <p:watermark for="lastName" value="Input last name" />
+                            </p:inputText>                        
+                            <p:messages for="lastName" />
+
+                            <h:outputLabel for="email" value="Email: *" />
+                            <p:password id="email" value="#{companyAdminManagedBean.email}" label="email" required="true" >
+                                <p:watermark for="email" value="Input email" />
+                            </p:password>
+                            <p:messages for="email" />
+                            
+                            <p:outputLabel for="department" value="Department: " />
+                            <p:selectOneMenu id="department" value="#{companyAdminManagedBean.department}">
+                                <f:selectItem itemLabel="Select One" itemValue="" />
+                                <f:selectItem itemLabel="Sales and Marketing Department" itemValue="Sales and Marketing Department" />
+                                <f:selectItem itemLabel="Transportation Department" itemValue="Transportation Department" />
+                                <f:selectItem itemLabel="Warehouse Department" itemValue="Warehouse Department" />
+                                <f:selectItem itemLabel="Manufacturing Department" itemValue="Manufacturing Department" />
+                                <f:selectItem itemLabel="Account Management" itemValue="Account Management" />
+                            </p:selectOneMenu>
+                            <p:message for="department"/>
+                            
+                            <p:outputLabel for="title" value="Title: " />
+                            <p:selectOneMenu id="title" value="#{companyAdminManagedBean.title}">
+                               <f:selectItem itemLabel="Select One" itemValue="" />
+                               <f:selectItem itemLabel="Manager" itemValue="Managert" />
+                               <f:selectItem itemLabel="Staff" itemValue="Staff" />
+                            </p:selectOneMenu>
+                            <p:message for="title"/>                            
+
+                        </h:panelGrid>
+
+                        <f:facet name="footer">
+                            <p:commandButton onstart="dialog1.show()" oncomplete="dialog1.hide()" update="panel" ajax="true" type="submit" value="Create" actionListener="#{companyAdminManagedBean.saveUser()}" />
+                        </f:facet>
+                    </p:panel>
+                </h:form>
+
+    </ui:define>
+</ui:composition>
+
