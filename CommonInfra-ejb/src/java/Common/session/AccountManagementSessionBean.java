@@ -613,5 +613,20 @@ public class AccountManagementSessionBean implements AccountManagementSessionBea
                     + "\nPassword: " + password + "\nCompany: " + companyName + "\n\nPlease remember to change your password on your first login. Thank you.\n\nRegards,\nAdmin";
             gm.Send("merlion.no.reply", "IS3102JiaYou", email, "", title, msg);
     }
-
+    
+    @Override
+    public Boolean checkLock(String username, String userType) {
+        return false;
+    }
+    
+    @Override
+    public Boolean checkDelete(String username, String userType) {
+        return true;
+    }
+    
+    @Override
+    public Account retrieveAccount(String username, String userType) {
+        Account account=new Account();
+        return account;
+    }
 }

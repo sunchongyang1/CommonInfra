@@ -38,4 +38,8 @@ public interface AccountManagementSessionBeanLocal {
     public Account retrieveAccount(Long accountId, String accountType) throws AccountTypeNotExistException;
     public Title createTitle(String titleName, Department department) throws TitleExistException;
     public Boolean deleteTitle(Long titleId) throws TitleNotExistException;
+    //to be added, to return true if the account has been locked or deleted
+    public Boolean checkLock(String username, String userType);
+    public Boolean checkDelete(String username, String userType);
+    public Account retrieveAccount(String username, String userType);
 }

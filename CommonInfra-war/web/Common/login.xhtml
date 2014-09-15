@@ -15,14 +15,14 @@
                     <p:panel id ="panel">
                         <h:panelGrid columns="1" cellpadding="5">
                             
-                            <h:outputLabel for="domain" value="Domain:" />
-                            <p:selectOneMenu id="domain" value="#{loginManagedBean.domain}">
+                            <h:outputLabel for="userType" value="User Type:" />
+                            <p:selectOneMenu id="userType" value="#{loginManagedBean.userType}">
                                 <f:selectItem itemLabel="Select One" itemValue="" />
-                                <f:selectItem itemLabel="System Admin" itemValue="systemAdmin" />
-                                <f:selectItem itemLabel="Company Admin" itemValue="companyAdmin" />
-                                <f:selectItem itemLabel="Company User" itemValue="companyUser" />
+                                <f:selectItem itemLabel="System Admin" itemValue="SystemAdmin" />
+                                <f:selectItem itemLabel="Company Admin" itemValue="Admin" />
+                                <f:selectItem itemLabel="Company User" itemValue="User" />
                             </p:selectOneMenu>
-                            <p:messages for="domain" />
+                            <p:messages for="userType" />
 
                             <h:outputLabel for="username" value="Username: *" />
                             <p:inputText id="username" value="#{loginManagedBean.username}" label="Username" required="true" >
