@@ -11,10 +11,10 @@ import Common.session.AccountManagementSessionBeanLocal;
 import java.io.IOException;
 import javax.ejb.EJB;
 import javax.faces.application.FacesMessage;
-import javax.faces.bean.ManagedBean;
 import javax.faces.bean.RequestScoped;
 import javax.faces.context.ExternalContext;
 import javax.faces.context.FacesContext;
+import javax.inject.Named;
 import util.exception.AccountTypeNotExistException;
 import util.exception.PasswordNotMatchException;
 import util.exception.UserNotExistException;
@@ -24,7 +24,7 @@ import util.exception.UserNotExistException;
  *
  * @author Sun Mingjia
  */
-@ManagedBean
+@Named(value = "loginManagedBean")
 @RequestScoped
 public class LoginManagedBean {
     

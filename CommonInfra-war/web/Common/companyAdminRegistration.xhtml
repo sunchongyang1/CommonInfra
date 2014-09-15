@@ -40,9 +40,9 @@
                             <p:messages for="lastName" />
 
                             <h:outputLabel for="email" value="Email: *" />
-                            <p:password id="email" value="#{systemAdminManagedBean.email}" label="email" required="true" >
+                            <p:inputText id="email" value="#{systemAdminManagedBean.email}" label="email" required="true" >
                                 <p:watermark for="email" value="Input email" />
-                            </p:password>
+                            </p:inputText>
                             <p:messages for="email" />
 
                             <h:outputLabel for="companyName" value="Company Name: *" />

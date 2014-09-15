@@ -13,17 +13,17 @@ import Common.entity.Title;
 import Common.session.AccountManagementSessionBeanLocal;
 import javax.ejb.EJB;
 import javax.faces.application.FacesMessage;
-import javax.faces.bean.ManagedBean;
-import javax.faces.bean.RequestScoped;
+import javax.faces.bean.SessionScoped;
 import javax.faces.context.ExternalContext;
 import javax.faces.context.FacesContext;
+import javax.inject.Named;
 
 /**
  *
  * @author Sun Mingjia
  */
-@ManagedBean
-@RequestScoped
+@Named(value = "companyAdminManagedBean")
+@SessionScoped
 public class CompanyAdminManagedBean {
     
     public CompanyAdminManagedBean() {

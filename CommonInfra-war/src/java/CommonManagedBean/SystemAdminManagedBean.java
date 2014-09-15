@@ -15,10 +15,10 @@ import java.util.ArrayList;
 import java.util.List;
 import javax.ejb.EJB;
 import javax.faces.application.FacesMessage;
-import javax.faces.bean.ManagedBean;
-import javax.faces.bean.RequestScoped;
+import javax.faces.bean.SessionScoped;
 import javax.faces.context.ExternalContext;
 import javax.faces.context.FacesContext;
+import javax.inject.Named;
 import util.exception.CompanyExistException;
 import util.exception.DepartmentExistException;
 import util.exception.TitleExistException;
@@ -27,8 +27,8 @@ import util.exception.TitleExistException;
  *
  * @author Sun Mingjia
  */
-@ManagedBean(name="systemAdminManagedBean")
-@RequestScoped
+@Named(value ="systemAdminManagedBean")
+@SessionScoped
 public class SystemAdminManagedBean {
     
     public SystemAdminManagedBean() {       
