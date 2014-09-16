@@ -17,6 +17,7 @@ import java.util.List;
 import javax.ejb.EJB;
 import javax.enterprise.context.SessionScoped;
 import javax.faces.application.FacesMessage;
+import javax.faces.bean.ManagedBean;
 import javax.faces.context.ExternalContext;
 import javax.faces.context.FacesContext;
 import javax.inject.Named;
@@ -28,7 +29,7 @@ import util.exception.TitleExistException;
  *
  * @author Sun Mingjia
  */
-@Named(value ="systemAdminManagedBean")
+@Named(value = "systemAdminManagedBean")
 @SessionScoped
 public class SystemAdminManagedBean implements Serializable{
     
@@ -60,6 +61,7 @@ public class SystemAdminManagedBean implements Serializable{
     }
     
     public void saveCompany() throws CompanyExistException, DepartmentExistException, TitleExistException {
+        System.out.println("Hello world");
         System.err.println("Error in save company");
         String response = null;
         
@@ -67,11 +69,13 @@ public class SystemAdminManagedBean implements Serializable{
         if (companyType.equals("1PL")) {
             company = cmsbl.createCustomerCompany(companyName, companyType, contactNo);
             response = "Customer Company successfully added";
+            this.displayFaceMessage(response);
         }
         //create partner company
         if ((companyType.equals("2PL")|(companyType.equals("3PL"))|companyType.equals("4PL"))|(companyType.equals("5PL"))) {
             company = cmsbl.createPartnerCompany(companyName, companyType, contactNo);
             response = "Partner Company successfully added";
+            this.displayFaceMessage(response);
         }
         //trigger creation of department
         if (response !=null) {
