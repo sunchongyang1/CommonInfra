@@ -10,7 +10,7 @@
                     <file>${reference.CommonInfra-ejb.dist}</file>
                 </library>
                 <library dirs="200">
-                    <file>${libs.PrimeFaces_5.0.classpath}</file>
+                    <file>${file.reference.primefaces-5.0.jar}</file>
                     <path-in-war>WEB-INF/lib</path-in-war>
                 </library>
             </web-module-libraries>
