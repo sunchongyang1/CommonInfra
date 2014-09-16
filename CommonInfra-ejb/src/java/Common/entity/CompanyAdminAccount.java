@@ -80,6 +80,8 @@ public class CompanyAdminAccount extends Account implements Serializable {
     /**
      * @return the companyAdmin
      */
+    
+    
     public CompanyAdmin getCompanyAdmin() {
         return companyAdmin;
     }

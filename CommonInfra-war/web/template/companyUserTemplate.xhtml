@@ -3,7 +3,8 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:ui="http://java.sun.com/jsf/facelets"
       xmlns:h="http://java.sun.com/jsf/html"
-      xmlns:p="http://primefaces.org/ui">
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
 
     <h:head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
@@ -14,7 +15,7 @@
 
     <h:body>
         <p:layout fullPage="true">
-            <p:layoutUnit position="north" style="font-size: 30px">    
+            <p:layoutUnit position="north">    
                 <h:form>  
                     <p:growl id="messages"/>
  
@@ -34,8 +35,11 @@
                        <p:submenu label="Help" icon="ui-icon-help">
                             <p:menuitem value="MerLION Help" url="#" />
                        </p:submenu>
-  
-                        <p:commandButton type="button" value="Logout" icon="ui-icon-extlink" actionListener="#{companyUserManagedBean.logout()}"/>
+                        
+                       <f:facet name="options">
+                          <p:commandButton type="submit" value="Logout" icon="ui-icon-extlink" actionListener="#{companyUserManagedBean.logout()}"/> 
+                       </f:facet>
+                        
                     </p:menubar>
                     
                     <div style="height:800px"></div>
