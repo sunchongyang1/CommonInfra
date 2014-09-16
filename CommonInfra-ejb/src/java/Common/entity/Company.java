@@ -34,7 +34,7 @@ import javax.persistence.OneToOne;
  * @author chongyangsun
  */
 @Entity
-public abstract class Company implements Serializable {
+public class Company implements Serializable {
     private static final long serialVersionUID = 1L;
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
