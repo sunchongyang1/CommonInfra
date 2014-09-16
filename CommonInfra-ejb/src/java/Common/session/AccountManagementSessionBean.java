@@ -615,18 +615,122 @@ public class AccountManagementSessionBean implements AccountManagementSessionBea
     }
     
     @Override
-    public Boolean checkLock(String username, String userType) {
-        return false;
+    public Boolean checkLock(String username, String accountType) throws AccountTypeNotExistException, UserNotExistException {
+        if(accountType.equals("Admin")) {
+            Query query = em.createQuery("select c from CompanyAdminAccount c where c.username= :user");
+            query.setParameter("user", username);
+            ArrayList<CompanyAdminAccount> companyAdminAccountList = new ArrayList(query.getResultList());
+            if(companyAdminAccountList.isEmpty()){
+                throw new UserNotExistException("Username: " + username + " does not exists!");
+            }
+            CompanyAdminAccount companyAdminAccount = companyAdminAccountList.get(0);
+            if(companyAdminAccount.isLockedOrNot()) {
+                return Boolean.TRUE;
+            } else
+                return Boolean.FALSE;
+        } else if(accountType.equals("User")) {
+            Query query = em.createQuery("select c from CompanyUserAccount c where c.username= :user");
+            query.setParameter("user", username);
+            ArrayList<CompanyUserAccount> companyUserAccountList = new ArrayList(query.getResultList());
+            if(companyUserAccountList.isEmpty()){
+                throw new UserNotExistException("Username: " + username + " does not exists!");
+            }
+            CompanyUserAccount companyUserAccount = companyUserAccountList.get(0);
+            if(companyUserAccount.isLockedOrNot()) {
+                return Boolean.TRUE;
+            } else
+                return Boolean.FALSE;
+        } else if(accountType.equals("SystemAdmin")) {
+            Query query = em.createQuery("select c from SystemAdminAccount c where c.username= :user");
+            query.setParameter("user", username);
+            ArrayList<SystemAdminAccount> systemAdminAccountList = new ArrayList(query.getResultList());
+            if(systemAdminAccountList.isEmpty()){
+                throw new UserNotExistException("Username: " + username + " does not exists!");
+            }
+            SystemAdminAccount systemAdminAccount = systemAdminAccountList.get(0);
+            if(systemAdminAccount.isLockedOrNot()) {
+                return Boolean.TRUE;
+            } else
+                return Boolean.FALSE;
+        } else {
+            throw new AccountTypeNotExistException("Username: "+username+" does not exist!");
+        }
     }
     
     @Override
-    public Boolean checkDelete(String username, String userType) {
-        return true;
+    public Boolean checkDelete(String username, String accountType) throws AccountTypeNotExistException, UserNotExistException {
+        if(accountType.equals("Admin")) {
+            Query query = em.createQuery("select c from CompanyAdminAccount c where c.username= :user");
+            query.setParameter("user", username);
+            ArrayList<CompanyAdminAccount> companyAdminAccountList = new ArrayList(query.getResultList());
+            if(companyAdminAccountList.isEmpty()){
+                throw new UserNotExistException("Username: " + username + " does not exists!");
+            }
+            CompanyAdminAccount companyAdminAccount = companyAdminAccountList.get(0);
+            if(companyAdminAccount.isDeleteOrNot()) {
+                return Boolean.TRUE;
+            } else
+                return Boolean.FALSE;
+        } else if(accountType.equals("User")) {
+            Query query = em.createQuery("select c from CompanyUserAccount c where c.username= :user");
+            query.setParameter("user", username);
+            ArrayList<CompanyUserAccount> companyUserAccountList = new ArrayList(query.getResultList());
+            if(companyUserAccountList.isEmpty()){
+                throw new UserNotExistException("Username: " + username + " does not exists!");
+            }
+            CompanyUserAccount companyUserAccount = companyUserAccountList.get(0);
+            if(companyUserAccount.isDeleteOrNot()) {
+                return Boolean.TRUE;
+            } else
+                return Boolean.FALSE;
+        } else if(accountType.equals("SystemAdmin")) {
+            Query query = em.createQuery("select c from SystemAdminAccount c where c.username= :user");
+            query.setParameter("user", username);
+            ArrayList<SystemAdminAccount> systemAdminAccountList = new ArrayList(query.getResultList());
+            if(systemAdminAccountList.isEmpty()){
+                throw new UserNotExistException("Username: " + username + " does not exists!");
+            }
+            SystemAdminAccount systemAdminAccount = systemAdminAccountList.get(0);
+            if(systemAdminAccount.isDeleteOrNot()) {
+                return Boolean.TRUE;
+            } else
+                return Boolean.FALSE;
+        } else {
+            throw new AccountTypeNotExistException("Username: "+username+" does not exist!");
+        }
     }
     
     @Override
-    public Account retrieveAccount(String username, String userType) {
-        Account account=new Account();
-        return account;
+    public Account retrieveAccount(String username, String accountType) throws AccountTypeNotExistException, UserNotExistException {
+        if(accountType.equals("Admin")) {
+            Query query = em.createQuery("select c from CompanyAdminAccount c where c.username= :user");
+            query.setParameter("user", username);
+            ArrayList<CompanyAdminAccount> companyAdminAccountList = new ArrayList(query.getResultList());
+            if(companyAdminAccountList.isEmpty()){
+                throw new UserNotExistException("Username: " + username + " does not exists!");
+            }
+            CompanyAdminAccount companyAdminAccount = companyAdminAccountList.get(0);
+            return companyAdminAccount;
+        } else if(accountType.equals("User")) {
+            Query query = em.createQuery("select c from CompanyUserAccount c where c.username= :user");
+            query.setParameter("user", username);
+            ArrayList<CompanyUserAccount> companyUserAccountList = new ArrayList(query.getResultList());
+            if(companyUserAccountList.isEmpty()){
+                throw new UserNotExistException("Username: " + username + " does not exists!");
+            }
+            CompanyUserAccount companyUserAccount = companyUserAccountList.get(0);
+            return companyUserAccount;
+        } else if(accountType.equals("SystemAdmin")) {
+            Query query = em.createQuery("select c from SystemAdminAccount c where c.username= :user");
+            query.setParameter("user", username);
+            ArrayList<SystemAdminAccount> systemAdminAccountList = new ArrayList(query.getResultList());
+            if(systemAdminAccountList.isEmpty()){
+                throw new UserNotExistException("Username: " + username + " does not exists!");
+            }
+            SystemAdminAccount systemAdminAccount = systemAdminAccountList.get(0);
+            return systemAdminAccount;
+        } else {
+            throw new AccountTypeNotExistException("Username: "+username+" does not exist!");
+        }
     }
 }

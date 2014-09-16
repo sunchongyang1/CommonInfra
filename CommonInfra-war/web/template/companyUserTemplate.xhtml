@@ -3,18 +3,41 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:ui="http://java.sun.com/jsf/facelets"
       xmlns:h="http://java.sun.com/jsf/html"
-      xmlns:p="http://primefaces.org/ui">
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
 
     <h:head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
         <link href="./../resources/css/default.css" rel="stylesheet" type="text/css" />
         <link href="./../resources/css/cssLayout.css" rel="stylesheet" type="text/css" />
-        <title>Company User Account Management</title>
+        <link href="../resources/css/bootstrap.min.css" rel="stylesheet"/>
+        <link href="../resources/css/merlion-platform.css" rel="stylesheet" type="text/css"/>
+        <link href="http://fonts.googleapis.com/css?family=Sonsie+One" rel="stylesheet" type="text/css"/>
+        <ui:insert name="head-title">
+            <title>Company User Account Management</title>
+        </ui:insert>
+        
+        <style type="text/css">
+            .ui-layout-north {
+                z-index:20 !important;
+                overflow:visible !important;;
+            }
+
+            .ui-layout-north .ui-layout-unit-content {
+                overflow:visible !important;
+            }
+        </style>
     </h:head>
 
     <h:body>
         <p:layout fullPage="true">
-            <p:layoutUnit position="north" style="font-size: 30px">    
+            <p:layoutUnit position="north" size = "120">
+                <div class="container">
+                    <div id="logo">
+                        <h2 style="color: #000; margin-top: 10px;">MERLION</h2>
+                        <hr style="margin-top: 10px; margin-bottom: 10px;" />
+                    </div>
+                </div>
                 <h:form>  
                     <p:growl id="messages"/>
  
@@ -34,16 +57,18 @@
                        <p:submenu label="Help" icon="ui-icon-help">
                             <p:menuitem value="MerLION Help" url="#" />
                        </p:submenu>
-  
-                        <p:commandButton type="button" value="Logout" icon="ui-icon-extlink" actionListener="#{companyUserManagedBean.logout()}"/>
+                        <f:facet name="options">
+                            <p:inputText style="margin-right:10px" placeholder="Search"/>
+                            <p:commandButton type="button" value="Logout" icon="ui-icon-extlink" actionListener="#{companyUserManagedBean.logout()}"/>
+                        </f:facet>
                     </p:menubar>
                     
-                    <div style="height:800px"></div>
-                    <p:sticky target="mb" />
+<!--                    <div style="height:800px"></div>
+                    <p:sticky target="mb" />-->
                 </h:form>
             </p:layoutUnit>
 
-            <p:layoutUnit position="west" size="180"  header="Main Menu">
+            <p:layoutUnit position="west" size="200"  header="Main Menu" collapsible="true">
                 <ui:insert name="leftpanel">
                     <h:form>
                         <p:menu>
@@ -75,7 +100,7 @@
                     <ui:include src="staffCommonFunc.xhtml" />
                 </ui:insert>
             </p:layoutUnit>-->
-            <p:layoutUnit position="south" size="100">
+            <p:layoutUnit position="south">
                 <ui:insert name="footer">
                     <ui:include src="defaultFooter.xhtml" />
                 </ui:insert>
