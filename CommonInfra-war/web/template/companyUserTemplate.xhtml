@@ -14,7 +14,7 @@
 
     <h:body>
         <p:layout fullPage="true">
-            <p:layoutUnit position="north" header="#{companyUserManagedBean.welcome}" style="font-size: 30px">    
+            <p:layoutUnit position="north" style="font-size: 30px">    
                 <h:form>  
                     <p:growl id="messages"/>
  
@@ -77,7 +77,7 @@
             </p:layoutUnit>-->
             <p:layoutUnit position="south" size="100">
                 <ui:insert name="footer">
-                    <ui:include src="IntranetFooter.xhtml" />
+                    <ui:include src="defaultFooter.xhtml" />
                 </ui:insert>
             </p:layoutUnit>
 
