@@ -11,11 +11,12 @@ import Common.entity.Department;
 import Common.entity.Title;
 import Common.session.AccountManagementSessionBeanLocal;
 import Common.session.CompanyManagementSessionBeanLocal;
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 import javax.ejb.EJB;
+import javax.enterprise.context.SessionScoped;
 import javax.faces.application.FacesMessage;
-import javax.faces.bean.SessionScoped;
 import javax.faces.context.ExternalContext;
 import javax.faces.context.FacesContext;
 import javax.inject.Named;
@@ -29,7 +30,7 @@ import util.exception.TitleExistException;
  */
 @Named(value ="systemAdminManagedBean")
 @SessionScoped
-public class SystemAdminManagedBean {
+public class SystemAdminManagedBean implements Serializable{
     
     public SystemAdminManagedBean() {       
     }
@@ -39,6 +40,7 @@ public class SystemAdminManagedBean {
     @EJB
     CompanyManagementSessionBeanLocal cmsbl;
     
+    private String welcome="Have a nice day at work!";
     private String username;
     private String firstName;
     private String lastName;

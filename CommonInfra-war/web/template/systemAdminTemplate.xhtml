@@ -54,12 +54,29 @@
         <p:layout fullPage="true" >
             <p:layoutUnit position="north" >
                 <ui:insert name="header" >
-                    <ui:include src="defaultHeader.xhtml" />
+                    <ui:include src="#{systemAdminManagedBean.welcome}" />
                 </ui:insert>
+                
+            </p:layoutUnit>
+            
+                        <p:layoutUnit position="west" size="180"  header="Main Menu">
+                <ui:insert name="leftpanel">
+                    <h:form>
+                        <p:menu>
+                            <p:menuitem value="View System User Registration Requests"  url="./../CommonWeb/viewUserRegistration.xhtml"/>
+                            <p:menuitem value="View and Search System User Information"  url="./../CommonWeb/viewUserInfo.xhtml"/>
+                        </p:menu>
+
+                    </h:form>
+
+                </ui:insert>
+
             </p:layoutUnit>
 
-            <p:layoutUnit position="center">                                                         
+            <p:layoutUnit position="center">     
+                <ui:include src="systemAdminFunc.xhtml" />
                 <ui:insert name="contents">
+                    display your contents here
                 </ui:insert>
             </p:layoutUnit>
 

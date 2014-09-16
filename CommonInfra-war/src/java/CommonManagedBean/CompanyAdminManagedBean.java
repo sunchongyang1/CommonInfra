@@ -11,9 +11,10 @@ import Common.entity.Company;
 import Common.entity.Department;
 import Common.entity.Title;
 import Common.session.AccountManagementSessionBeanLocal;
+import java.io.Serializable;
 import javax.ejb.EJB;
+import javax.enterprise.context.SessionScoped;
 import javax.faces.application.FacesMessage;
-import javax.faces.bean.SessionScoped;
 import javax.faces.context.ExternalContext;
 import javax.faces.context.FacesContext;
 import javax.inject.Named;
@@ -24,7 +25,7 @@ import javax.inject.Named;
  */
 @Named(value = "companyAdminManagedBean")
 @SessionScoped
-public class CompanyAdminManagedBean {
+public class CompanyAdminManagedBean implements Serializable{
     
     public CompanyAdminManagedBean() {
         

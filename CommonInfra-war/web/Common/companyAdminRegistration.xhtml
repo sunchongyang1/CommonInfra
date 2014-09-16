@@ -71,8 +71,9 @@
 
                         </h:panelGrid>
 
-                            <p:commandButton ajax="true" type="submit" value="Submit" actionListener="#{systemAdminManagedBean.saveCompany()}" />
+                            <p:commandButton ajax="true" type="submit" value="Submit" icon="ui-icon-check" actionListener="#{systemAdminManagedBean.saveCompany()}" />
                     </p:panel>
+                    <p:spotlight target="pnl" widgetVar="spot"/>
                 </h:form>
 
     </ui:define>

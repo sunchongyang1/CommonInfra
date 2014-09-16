@@ -21,7 +21,11 @@ public class CompanyUserManagedBean implements Serializable {
     /**
      * Creates a new instance of CompanyUserManagedBean
      */
+    private String welcome="Welcome to MerLION Platform!";
+    
     public CompanyUserManagedBean() {
     }
-    
+    public void logout() {
+        
+    }
 }

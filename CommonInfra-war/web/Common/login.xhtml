@@ -36,11 +36,14 @@
                                 <p:watermark for="password" value="Please enter password" />
                             </p:password>
                             <p:messages for="password" />
+                            
+                            <p:captcha label="Captcha" theme="white" rendered="#{loginManagedBean.attempts>=3}" required="#{loginManagedBean.attempts>=3}" secure="true"/>
 
                            </h:panelGrid>
 
                             <p:commandButton ajax="true" type="submit" value="Login" actionListener="#{loginManagedBean.login()}" />
                     </p:panel>
+                    
                 </h:form>
 
     </ui:define>
