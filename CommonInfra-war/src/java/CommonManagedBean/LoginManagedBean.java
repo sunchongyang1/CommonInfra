@@ -32,9 +32,11 @@ public class LoginManagedBean {
     private String username;
     private String password;
     private int attempts;
+    private String email;
     private final int max_attempts=5;
     FacesContext fc = FacesContext.getCurrentInstance();
     ExternalContext ec = fc.getExternalContext();
+    
     @EJB
     AccountManagementSessionBeanLocal amsbl;
     
@@ -46,8 +48,8 @@ public class LoginManagedBean {
         System.err.println("login");
         
         //set the session attribute
-        FacesContext.getCurrentInstance().getExternalContext().getSessionMap().put("userType", userType);
-        FacesContext.getCurrentInstance().getExternalContext().getSessionMap().put("username", username);
+        ec.getSessionMap().put("userType", userType);
+        ec.getSessionMap().put("username", username);
         
         try {
             if ((userType!=null)&&(username!=null)&&(password!=null)&&(amsbl.checkDelete(username,userType)==false)&&(amsbl.checkLock(username,userType)==false)&&attempts<max_attempts) {
@@ -80,17 +82,33 @@ public class LoginManagedBean {
             this.displayFaceMessage("User "+username+"does not exist");
         }
     }
+    
+    private void resetPassword() throws AccountTypeNotExistException {
+        Account account=amsbl.retrieveAccount(username, userType);
+        if (account.getUser().getEmail().equals("email")) {
+            Long id=account.getId();
+            amsbl.resetPassword(id, userType, email);
+        }
+        else {
+            this.displayFaceMessage("Please input valid information");
+        }    
+    }
 
+    private void logout() throws IOException {
+        ec.getSessionMap().clear();
+        ec.redirect("/CommonInfra/index.xhtml");
+    }
+    
     private void displayFaceMessage(String response) {
         FacesMessage msg = new FacesMessage(response);
         FacesContext.getCurrentInstance().addMessage(null, msg);
     }
 
-    public String getDomain() {
+    public String getUserType() {
         return userType;
     }
 
-    public void setDomain(String userType) {
+    public void setUserType(String userType) {
         this.userType = userType;
     }
 
@@ -117,4 +135,14 @@ public class LoginManagedBean {
     public void setAttempts(int attempts) {
         this.attempts = attempts;
     }   
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+    
+    
 }

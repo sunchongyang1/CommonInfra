@@ -19,28 +19,28 @@
                             </f:facet>
 
                             <h:outputLabel for="username" value="Username: *" />
-                            <p:inputText id="username" value="#{systemAdminManagedBean.username}" label="Username" required="true" >
+                            <p:inputText id="username" value="#{systemAdminManagedBean.companyAdminAccount.username}" label="Username" required="true" >
                                 <f:validateLength minimum="4" maximum="25" />
                                 <p:watermark for="username" value="Input Username" />
                             </p:inputText>                        
                             <p:messages for="username" />
                             
                             <h:outputLabel for="firstName" value="First name: *" />
-                            <p:inputText id="firstName" value="#{systemAdminManagedBean.firstName}" label="FirstName" required="true" >
+                            <p:inputText id="firstName" value="#{systemAdminManagedBean.companyAdmin.firstName}" label="FirstName" required="true" >
                                 <f:validateLength minimum="4" maximum="25" />
                                 <p:watermark for="firstName" value="Input first name" />
                             </p:inputText>                        
                             <p:messages for="firstName" />
                             
-                            <h:outputLabel for="lastname" value="Last Name: *" />
-                            <p:inputText id="lastName" value="#{systemAdminManagedBean.lastName}" label="lastName" required="true" >
+                            <h:outputLabel for="lastName" value="Last Name: *" />
+                            <p:inputText id="lastName" value="#{systemAdminManagedBean.companyAdmin.lastName}" label="lastName" required="true" >
                                 <f:validateLength minimum="4" maximum="25" />
                                 <p:watermark for="lastName" value="Input last name" />
                             </p:inputText>                        
                             <p:messages for="lastName" />
 
                             <h:outputLabel for="email" value="Email: *" />
-                            <p:inputText id="email" value="#{systemAdminManagedBean.email}" label="email" required="true" >
+                            <p:inputText id="email" value="#{systemAdminManagedBean.companyAdmin.email}" label="email" required="true" >
                                 <p:watermark for="email" value="Input email" />
                             </p:inputText>
                             <p:messages for="email" />
@@ -53,7 +53,7 @@
                             <p:messages for="companyName" />
 
                             <h:outputLabel for="companyType" value="Company Type:" />
-                            <p:selectOneMenu id="companyType" value="#{systemAdminManagedBean.company.companyType}">
+                            <p:selectOneMenu id="companyType" value="#{systemAdminManagedBean.companyType}">
                                 <f:selectItem itemLabel="Select One" itemValue="" />
                                 <f:selectItem itemLabel="1PL" itemValue="1PL" />
                                 <f:selectItem itemLabel="2PL" itemValue="2PL" />
