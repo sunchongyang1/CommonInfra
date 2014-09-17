@@ -11,7 +11,6 @@ package util.exception;
  * @author chongyangsun
  */
 public class DepartmentExistException extends Exception {
-    private static final long serialVersionUID = 1L;
 
     public DepartmentExistException() {
         super();

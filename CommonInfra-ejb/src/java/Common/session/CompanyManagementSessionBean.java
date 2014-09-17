@@ -202,9 +202,13 @@ public class CompanyManagementSessionBean implements CompanyManagementSessionBea
     public Department createDepartment(String departmentName, Company company) throws DepartmentExistException {
         Query query = em.createQuery("select d from Department d where d.departmentName=?1 and d.company=?2");
         query.setParameter(1, departmentName);
-        query.setParameter(2, company.getId());
+        query.setParameter(2, company);
         ArrayList<Department> departmentList = new ArrayList(query.getResultList());
+        if(departmentList.isEmpty()) {
+            System.out.println("List is empty");
+        }
         if(!departmentList.isEmpty()){
+            System.out.println("List is not empty");
             throw new DepartmentExistException("Department " + departmentName + " for company " + company.getCompanyName() + " is already exist");
         }
         Department department = new Department(departmentName, company);

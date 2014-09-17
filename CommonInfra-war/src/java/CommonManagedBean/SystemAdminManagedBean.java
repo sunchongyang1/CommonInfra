@@ -101,11 +101,14 @@ public class SystemAdminManagedBean implements Serializable{
         //trigger creation of department
         if (response !=null) {
             //create default department
-            departmentList.add(cmsbl.createDepartment("Sales and Marketing Department", getCompany()));
-            departmentList.add(cmsbl.createDepartment("Transportation Department", getCompany()));
-            departmentList.add(cmsbl.createDepartment("Warehouse Department", getCompany()));
-            departmentList.add(cmsbl.createDepartment("Manufacturing Department", getCompany()));
-            departmentList.add(cmsbl.createDepartment("Account Management", getCompany()));
+            //System.out.println(response);
+            Company c=getCompany();
+            //System.out.println(c.getCompanyName());
+            departmentList.add(cmsbl.createDepartment("Sales and Marketing Department", c));
+            departmentList.add(cmsbl.createDepartment("Transportation Department", c));
+            departmentList.add(cmsbl.createDepartment("Warehouse Department", c));
+            departmentList.add(cmsbl.createDepartment("Manufacturing Department", c));
+            departmentList.add(cmsbl.createDepartment("Account Management", c));
             
             //create default title
             this.saveTitle(departmentList);
